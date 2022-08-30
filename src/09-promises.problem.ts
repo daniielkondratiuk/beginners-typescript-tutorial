@@ -1,3 +1,5 @@
+import {promise} from "zod";
+
 interface LukeSkywalker {
   name: string;
   height: string;
@@ -9,7 +11,7 @@ interface LukeSkywalker {
   gender: string;
 }
 
-export const fetchLukeSkywalker = async (): LukeSkywalker => {
+export const fetchLukeSkywalker = async () : Promise<object> => {
   const data = await fetch("https://swapi.dev/api/people/1").then((res) => {
     return res.json();
   });
